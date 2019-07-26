@@ -4,8 +4,8 @@
  * Description: JSBridge
  * @warn __IMPURE__
  */
-import { guid } from './common'
 import * as R from 'ramda'
+import { guid } from './common'
 
 const MOUNT_POINT = 'hc_js_bridge'
 const CALLBACK_NAME = '$emit'
