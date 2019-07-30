@@ -11,8 +11,6 @@ export const hasClass = R.curry((name, target) => R.ifElse(
   R.always(false)
 )(target))
 
-export const removeClass = () => {}
-
 export const getData = R.curry((key, dom) => R.pathOr(null, ['dataset', key], dom))
 
 export const query = R.invoker(1, 'querySelectorAll')

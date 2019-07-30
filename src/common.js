@@ -15,7 +15,7 @@ export const getFormData = R.ifElse(
   R.both(R.identity, R.hasIn('querySelectorAll')),
   R.pipe(
     R.invoker(1, 'querySelectorAll')('input[name]'),
-    reduce((acc, item) => R.mergeLeft(acc, { [item.name]: item.value }), {})
+    R.reduce((acc, item) => R.mergeLeft(acc, { [item.name]: item.value }), {})
   ),
   R.always({})
 )
@@ -43,4 +43,4 @@ export const canParseFloat = R.test(/^([+-])?\d*\.?\d+\D*$/)
 
 export const getQueryParam = R.pipe(R.concat('(^|&)'), R.concat(R.__, '=([^&]*)(&|$)'), R.constructN(1, RegExp), R.match(R.__, window.location.search.slice(1)), R.nth(2), R.when(R.identity, unescape))
 
-export const mapIndexed = R.addIndex(map)
+export const mapIndexed = R.addIndex(R.map)

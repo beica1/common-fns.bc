@@ -23,7 +23,7 @@ export const createStore = (key, initialValue) => {
   }
 
   return Object.freeze({
-    get: R.prop(__, store),
+    get: R.prop(R.__, store),
     set: R.curry((k, v) => { store[k] = v })
   })
 }

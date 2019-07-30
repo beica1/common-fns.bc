@@ -8,7 +8,7 @@ import { zeroize } from './common'
 
 const least2Chars = zeroize(2)
 
-const isDate = R.both(R.is(Date), R.o(R.complement(equals(NaN)), R.invoker(0, 'getTime')))
+const isDate = R.both(R.is(Date), R.o(R.complement(R.equals(NaN)), R.invoker(0, 'getTime')))
 
 const formatter = [
   { index: 0, reg: /y+/, method: R.invoker(0, 'getFullYear') },
